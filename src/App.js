@@ -10,17 +10,17 @@ function App() {
   
   const dataProducts = [
     {
-      name: 'Televisor 52"',
+      title: 'Televisor 52"',
       price: 2090,
-      imgurl: "https://picsum.photos/280/260",
-      description:
+      img: "https://picsum.photos/280/260",
+      category:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,   quidem.",
     },
     {
-      name: 'Monitor 22"',
+      title: 'Monitor 22"',
       price: 890,
-      imgurl: "https://picsum.photos/280/260",
-      description: "Lorem ipsum dolor sit,  quidem.",
+      img: "https://picsum.photos/280/260",
+      category: "Lorem ipsum dolor sit,  quidem.",
     },
   ];
 
@@ -36,10 +36,9 @@ function App() {
         <Card data={dataProducts[1]} />
       </div>
 
-      <ItemCount initial={1} stock={10} />
-      <ItemCount initial={5} stock={20} />
-      <ItemCount initial={10} stock={30} />
-    </div>
+      <ItemCount initial={0} stock={10} />
+      
+      </div>
   );
 }
 

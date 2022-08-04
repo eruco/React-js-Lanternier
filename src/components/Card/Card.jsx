@@ -1,17 +1,17 @@
 import Button from "../Button/Button";
-import "./Card.css"
+import "./Card.css";
 
-function Card({ name, price, imgurl, description }) {
+function Card({ title, price, img, category}) {
   return (
     <div className="card">
       <div className="card-img">
-        <img src={imgurl} alt="imagen" />
+        <img src={img} alt="imagen" />
       </div>
       <div className="card-detail">
-        <h2>{name}</h2>
-        <p>{description}</p>
+        <h2>{title}</h2>
+        <p>{category}</p>
         <h3>$ {price}</h3>
-        <Button type text="Agregar al carrito"></Button>
+        <Button type text="Ver más"></Button>
       </div>
     </div>
   );

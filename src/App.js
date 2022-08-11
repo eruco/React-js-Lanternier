@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+/*import ItemListContainer from './components/ItemListContainer/ItemListContainer';**/
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <div className="main__container">
         <h1>App en React</h1>
       </div>
-      <ItemListContainer title={'Cartas Pokemon'} />
+      {/*<ItemListContainer title={'Cartas Pokemon'} />*/}
+      <ItemDetailContainer/>
     </div>
   );
 }

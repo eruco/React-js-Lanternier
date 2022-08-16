@@ -1,41 +1,49 @@
-import React, { useState } from 'react'
-import '../ItemCount/ItemCount.css'
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
+import React from 'react'
+import "./ItemCount.css"
 
-function ItemCount( { initial, stock }) {
-    const [count, setCount] = useState(initial)
-
-    const handleAdd = () => (count < stock) && setCount(count + 1);
-    const handleRemove = () => (count > initial) && setCount(count - 1);
-    const onAdd = () => stock > 0 ? alert(`${count} unidades agregadas`) : alert(`No hay stock`);
-
-    let backStock = (stock > 0) ? '' : 'grey';
-
-  return (
-    <>
-        <div className='itemcount__container'>
-            <div className='itemcount__controls'>
-                <Tooltip title="Restar unidad">
-                    <IconButton color="primary" aria-label="add to shopping cart" onClick={() => handleRemove()}>
-                        -
-                    </IconButton>
-                </Tooltip>
-
-                <p>{count}</p>
-
-                <Tooltip title="Agregar unidad">
-                    <IconButton color="primary" aria-label="add to shopping cart" onClick={() => handleAdd()}>
-                        +
-                    </IconButton>
-                </Tooltip>
+function ItemCount({ stock, min, product, addToCart }) {
+    const [amount, setAmount] = React.useState(1)
+    const [text, setText] = React.useState("Elije la cantidad")
+    const [classText, setClassText] = React.useState("text-stock")
+    function countPlus() {
+        if (amount < stock) {
+            setText("Elije la cantidad")
+            setClassText("text-stock")
+            setAmount(amount + 1)
+        }
+        else {
+            setText(`No hay más de ${stock} unidades en stock`)
+            setClassText("text-error");
+        }
+    }
+    function countSub() {
+        if (amount > min) {
+            setText("Elije la cantidad")
+            setClassText("text-stock")
+            setAmount(amount - 1)
+        }
+        else {
+            setText("No se puede agregar menos de un producto")
+            setClassText("text-error")
+        }
+    }
+    return (
+        <div className='count-container'>
+            <p className={classText}>{text}</p>
+            <div className='product-display'>
+                <div className='product-amount'>
+                    <h2 className='product-buy datail-buy'>{amount}</h2>
+                </div>
+                <div className='products-buttonPlus'>
+                    <button className='product-buttonCount' onClick={countPlus}>+</button>   
+                </div>
+                <div className='products-buttonSub'>
+                    <button className='product-buttonCount' onClick={countSub}>-</button>
+                </div>
             </div>
-
-            <Button variant='contained' size="small" onClick={() => onAdd()} style={{backgroundColor: backStock}}>Agregar al carrito</Button>
+            <button onClick={() => addToCart(amount)} className='product-addCart'>Agregar al Carrito</button>
         </div>
-    </>
-  )
+    )
 }
 
 export default ItemCount

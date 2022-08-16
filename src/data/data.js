@@ -1,45 +1,104 @@
-const itemsData = [
-    {
-        "key": 1,
-        "name": 'Blastoise',
-        "type": 'CartaPokemon',
-        "price": 5000,
-        "stock": 5,
-        "img": 'blast.png'
+const ItemData =[
+    {   
+        img:"./teclado1.jpg",
+        id: 1, 
+        name: "teclado gamer",
+        description: "teclado gamer profesional",
+        category: "teclados",
+        price: 4000,
+        stock: 5
+    },
+    {   
+        img:"./teclado2.jpg",
+        id: 2, 
+        name: "teclado gamer",
+        description: "teclado gamer profesional",
+        category: "teclados",
+        price: 7000,
+        stock: 11
+    },
+    {   
+        img:"./teclado3.jpg",
+        id: 3, 
+        name: "teclado gamer",
+        description: "teclado gamer profesional",
+        category: "teclados",
+        price: 10000,
+        stock: 8
     },
     {
-        "key": 2,
-        "name": 'Gyarados',
-        "type": 'CartaPokemon',
-        "price": 3000,
-        "stock": 15,
-        "img": 'gyar.jpg'
+        img:"./mouse1.jpg",
+        id: 4, 
+        name: "mouse gamer",
+        description: "mouse gamer profesional",
+        category: "mouses",
+        price: 2000,
+        stock: 10
     },
     {
-        "key": 3,
-        "name": 'Jinx',
-        "type": 'CartaPokemon',
-        "price": 1000,
-        "stock": 25,
-        "img": 'jinx.jpg'
+        img:"./mouse2.jpg",
+        id: 5, 
+        name: "mouse gamer",
+        description: "mouse gamer profesional",
+        category: "mouses",
+        price: 4000,
+        stock: 15
     },
     {
-        "key": 4,
-        "name": 'Charizard',
-        "type": 'CartaPokemon',
-        "price": 5000,
-        "stock": 7,
-        "img": 'char.jpg'
+        img:"./mouse3.jpg",
+        id: 6, 
+        name: "mouse gamer",
+        description: "mouse gamer profesional",
+        category: "mouses",
+        price: 5000,
+        stock: 10
     },
     {
-        "key": 5,
-        "name": 'Machamp',
-        "type": 'CartaPokemon',
-        "price": 3700,
-        "stock": 12,
-        "img": 'mach.jpg'
+        img:"./mouse4.jpg",
+        id: 7, 
+        name: "mouse gamer",
+        description: "mouse gamer profesional",
+        category: "mouses",
+        price: 7000,
+        stock: 15
     },
-  
-];
+    {
+        img:"./monitor1.jpg",
+        id: 8, 
+        name: "monitor gamer",
+        description: "monitor gamer basico",
+        category: "monitor",
+        price: 40000,
+        stock: 20
+    },
+    {
+        img:"./monitor2.jpg",
+        id: 9, 
+        name: "monitor gamer",
+        description: "monitor gamer flat",
+        category: "monitor",
+        price: 60000,
+        stock: 7
+    },
+    {
+        id: 10, 
+        img: "./monitor3.jpg",
+        name: "monitor Gamer",
+        description: "monitor gamer flat",
+        category: "monitor",
+        price: 75000,
+        stock: 7
 
-export default itemsData;
+    },
+    {
+        id: 11, 
+        img: "./monitor4.jpg",
+        name: "monitor curvo",
+        description: "monitor curvo gamer",
+        category: "monitor",
+        price: 100000,
+        stock: 5
+    },
+    
+]
+export default ItemData

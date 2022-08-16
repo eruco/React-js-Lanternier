@@ -1,24 +1,19 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import ItemCount from '../ItemCount/ItemCount';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Item.css'
 
-function Item({ name, type, price, stock, img }) {
-return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" alt={name} height="140" image={img} />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">{name}</Typography>
-        <Typography variant="body2" color="text.secondary">$ {price}</Typography>
-      </CardContent>
-      <CardActions>
-        <ItemCount initial={1} stock={stock} />
-      </CardActions>
-    </Card>
-  );
+function Item({ img, name, category, price, stock, id }) {
+
+  return (
+    <div className='itemContainer'>
+      <img className='itemImg' src={img} alt='Foto Gamer'></img>
+      <h2 className='itemName'>{name}</h2>
+      <p className='itemCategory'>{category}</p>
+      <p className='itemPrice'>${price}</p>
+      <Link className='itemLink' to={`/detail/${id}`}>Ver Detalle</Link>
+      <p className='itemStock'> Stock disponible: {stock} </p>
+    </div>
+  )
 }
 
 export default Item

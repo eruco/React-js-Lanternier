@@ -1,10 +1,23 @@
 import React from 'react'
-import Item from '../Item/Item';
+import Item from '../Item/Item'
+import './ItemList.css'
 
 function ItemList({ data }) {
-    return(
-        data.map((element) => <Item key={element.key} name={element.name} type={element.type} price={element.price} stock={element.stock} img={element.img}/>)
-    );
+    return (
+        data.map((product) => {
+            return (
+                <Item
+                    key={product.id}
+                    id={product.id}
+                    img={product.img}
+                    name={product.name}
+                    category={product.category}
+                    price={product.price}
+                    stock ={product.stock}
+                />
+            )
+        })
+    )
 }
 
 export default ItemList

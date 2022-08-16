@@ -1,18 +1,10 @@
-.itemlist__container {
-    background-color: rgb(9, 29, 46);
-    border-radius: 20px;
-    color: white;
-    margin: 0 auto;
-    padding: 20px;
-    width: 95%;
+.itemsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 23%));
+    place-content: center;
+    column-gap: 2rem;
+    padding: 2rem;
 }
-
-.itemlist__container h2 {
-    margin-bottom: 10px;
-}
-
-.items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.main{
+ background-color: #f1f1f1
 }

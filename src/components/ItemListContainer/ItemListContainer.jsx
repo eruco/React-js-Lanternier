@@ -16,11 +16,12 @@ function ItemListContainer() {
   }
   useEffect(() => {
     getProducto().then(products => {
-      let itemsFilter = ItemData.filter((element) => element.category === idCategory)
+      
       if (idCategory === undefined) {
         setData(products)
       }
       else {
+        let itemsFilter = ItemData.filter((element) => element.category === idCategory)
         setData(itemsFilter)
       }
     })
@@ -28,11 +29,11 @@ function ItemListContainer() {
   }, [idCategory])
   return (
     <main className='main'>
-      <>
+
         <section className='itemsContainer'>
           <ItemList data={data} />
         </section>
-      </>
+
     </main>
   )
 }
